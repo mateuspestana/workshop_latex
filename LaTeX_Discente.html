@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+  <head>
+    <title>Introdução ao LaTeX</title>
+    <meta charset="utf-8" />
+    <meta name="author" content="Mateus Pestana" />
+    <link rel="stylesheet" href="xaringan-themer.css" type="text/css" />
+  </head>
+  <body>
+    <textarea id="source">
+class: center, middle, inverse, title-slide
+
+# Introdução ao LaTeX
+## com o padrão ABNT
+### Mateus Pestana
+### V Semana Discente IESP-UERJ
+### 16/09/2019
+
+---
+
+
+
+
+
+
+class: middle
+# O que é o `\(\LaTeX\)`?
+
+--
+
+&gt; O `\(\LaTeX\)` é um sistema de composição de alta qualidade, e inclui recursos projetados para a produção de documentação técnica e científica. `\(\LaTeX\)` é o padrão de fato para a comunicação e publicação de documentos científicos. `\(\LaTeX\)` está disponível como software livre. 
+
+&gt; Retirado de: https://www.latex-project.org/about/
+
+### Em outras palavras...
+
+---
+class: inverse, 
+## É uma linguagem utilizada para:
+
++ ### criar textos
+
++ ### formatar documentos
+
++ ### escrever fórmulas
+
++ ### administrar suas referências bibliográficas
+
++ ### criar livros, formulários, artigos, periódicos...
+
+---
+.pull-left[## Vantagens:
+
++ Gratuito 
+
++ Permite personalização (separando o estilo do conteúdo)
+
++ Acaba a preocupação com a ABNT, APA, Vancouver, MLA, etc
+
++ Lida automaticamente com as referências bibliográficas
+
++ Compatibilidade (é só texto!)
+
++ Gera um PDF pronto pra imprimir/enviar]
+
+.pull-right[## Desvantagens:
+
++ Curva de aprendizagem 
+
++ Não é WYSIWYG
+
++ Nem todo mundo (no Brasil) usa
+
++ Assusta quem nunca programou
+
++ Depois que você aprende, processadores de texto (Word, GDocs, LibreOffice) se tornam
+impossíveis de serem utilizados]
+
+
+---
+
+
+.pull-left[## Vantagens:
+
++ Gratuito 
+
++ Permite personalização (separando o estilo do conteúdo)
+
++ Acaba a preocupação com a ABNT, APA, Vancouver, MLA, etc
+
++ Lida automaticamente com as referências bibliográficas
+
++ Compatibilidade (é só texto!)
+
++ Gera um PDF pronto pra imprimir/enviar]
+
+.pull-right[## Desvantagens:
+
++ ~~Curva de aprendizagem~~
+
++ ~~Não é WYSIWYG~~
+
++ ~~Nem todo mundo (no Brasil) usa~~
+
++ ~~Assusta quem nunca programou~~
+
++ Depois que você aprende, processadores de texto (Word, GDocs, LibreOffice) se tornam
+impossíveis de serem utilizados]
+
+---
+class: inverse
+
+# Sintaxe
+
+&gt; ##\comando[opções]{conteúdo}
+
++ Todo comando se inicia com contrabarra (barra inversa)
+
++ *comando* é o nome da função, que processará algo (no caso, o conteúdo)
+
++ as opções da função, quando disponíveis, são colocadas entre colchetes [  ]
+
++ o conteúdo que será processado pela função vai entre chaves {  }
+
+--
+### Ou seja, se não começar com contrabarra, o LaTeX entenderá como um texto normal.
+
+
+---
+# Estrutura de um documento básico em `\(\LaTeX\)`
+
+```\documentclass{article}
+\documentclass{article}
+\title{Uso de \LaTeX nos periódicos científicos brasileiros}
+\author{Mateus Pestana}
+\date{Setembro 2019}
+\begin{document}
+   \maketitle
+   O presente artigo tem como objetivo analisar a utilização da
+   linguagem \LaTeX em revistas científicas publicadas no Brasil.
+\end{document}
+```
+
+---
+class: inverse, center, middle
+
+# O resultado do código anterior
+![](basico.pdf.png)
+---
+class: middle, center
+# Como funciona? 
+&gt;### O texto, com seus respectivos comandos e conteúdo, é compilado, ou seja, interpretado pela linguagem e colocado em um PDF
+
+
+---
+
+# Entendendo melhor
+
+Há um cabeçalho que chamamos de preâmbulo. Nele ficam definidos os **parâmetros**
+de estilo e formatação que serão utilizados, como:
+
++ a classe, que pode ser article, book, report, letter, beamer, slides...:
+```
+\documentclass{article}
+```
+
++ o título: 
+```
+\title{Uso de \LaTeX nos periódicos científicos brasileiros}
+```
+
++ o nome do autor: 
+```
+\author{Mateus Pestana}
+```
+---
+
+# Entendendo melhor 
+
+Há uma parte com o conteúdo que desejamos que apareça no resultado final, como texto corrido. 
+
++ Ela começa com: 
+```
+\begin{document}
+```
+  
++ Cria uma capa com o comando: 
+```
+\maketitle
+```
+  
++ Para terminar: 
+```
+\end{document}
+```
+
+---
+class: inverse
+# Traduzindo:
+
+&gt;#### Latex, eu estou iniciando um artigo {*article*}, cujo título será {*Uso de \LaTeX nos periódicos científicos brasileiros*}, e o autor {*Mateus Pestana*}. Vou iniciar o documento, faça a capa {*\maketitle*}. 
+
+&gt;&gt; #### O presente artigo tem como objetivo analisar a 
+&gt;&gt; #### utilização da linguagem \LaTeX em revistas científicas
+&gt;&gt; #### publicadas no Brasil.
+
+&gt; #### Finalize o documento.
+
+---
+# Onde utilizar?
+
+### Offline:
+- Primeiro, instalar MiKTex (miktex.org) ou TeXLive (tug.org/texlive) para Windows; ou MacTex (tug.org/mactex) para  MacOS
+
+####  Editores: 
+
++ TeXMaker (xm1math.net/texmaker)
+
++ TeXStudio (texstudio.org)
+
++ TeXShop (MacOS - pages.uoregon.edu/koch/texshop/)
+
+### Online
+
++ Overleaf (www.overleaf.com)
+
+---
+# Formatação de texto
+
+.center[
+.pull-left[
+### Entrada
+`\textbf{IESP-UERJ}`
+
+`\textit{IESP-UERJ}`
+
+`\section{título da seção}`
+]
+
+.pull-right[
+### Saída
+**IESP-UERJ**
+
+*IESP-UERJ*
+
+## título da seção
+]
+]
+
+---
+class: inverse
+# Experimentando:
+
+```\documentclass{article}
+\documentclass{article}
+\title{Uso de \LaTeX nos periódicos científicos brasileiros}
+\author{Mateus Pestana}
+\date{Setembro 2019}
+\begin{document}
+\maketitle
+\section{Introdução}
+
+O presente artigo tem como objetivo analisar a utilização da linguagem \LaTeX{} em revistas científicas publicadas no Brasil.
+
+\section{Seção 2}
+
+Texto em negrito: \textbf{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet, mauris eu egestas finibus, neque elit dapibus nisi, vel tincidunt dolor velit a diam. Mauris sit amet diam sed ipsum vestibulum efficitur et eu nisi.}
+
+Texto em itálico: \textit{Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque laoreet, mauris eu egestas finibus, neque elit dapibus nisi, vel tincidunt dolor velit a diam. Mauris sit amet diam sed ipsum vestibulum efficitur et eu nisi.}
+
+\subsection{Sub-seção}
+$$x = y^2 + z + k_j$$
+
+\end{document}
+```
+
+---
+class: inverse, center
+![](basico_02.pdf.png){width=10px}
+---
+
+# Outras configurações
+A maior parte das configurações relativas ao documento final são inseridas na primeira linha,
+`\documentclass[]`
+--
+
++ Se quisermos um artigo com fonte de tamanho 11...
+
+`\documentclass[article, 11pt]`
+
++ ... impresso dos dois lados
+
+`\documentclass[article, 11pt, twoside]`
+
++ ... em formato A4
+
+`\documentclass[article, 11pt, twoside, a4paper]`
+
++ ... onde usarei tanto palavras em inglês quanto em português
+
+`\documentclass[article, 11pt, twoside, a4paper, english, brazil]`
+
+---
+# Pacotes
+
+O `\(\LaTeX\)` usa pacotes para adicionar funcionalidades que não estão presentes por padrão.
+A maioria dos pacotes já vem em uma instalação padrão, e para serem utilizados, 
+basta serem citados antes de `\begin{document}` da seguinte forma:
+.center[
+.pull-left[
+.right[
+```
+\usepackage{lmodern}
+
+\usepackage{indentfirst}
+
+\usepackage{pdflscape}
+
+\usepackage{amsmath}
+
+\usepackage{times}
+
+\usepackage{longtable}
+
+\usepackage{gensymb}
+```
+]
+]
+
+.pull-right[
+.left[
++ Usa a fonte Latin Modern
+
++ Indenta o primeiro parágrafo
+
++ Cria páginas em paisagem
+
++ Permite escrever equações
+
++ Usa a fonte Times
+
++ Tabelas de mais de uma página
+
++ Utilização de indicador ordinal
+
+]
+]
+]
+---
+class: inverse, middle, center
+# Maior vantagem: modelos! 
+
+#### Escrever esse cabeçalho não é necessário toda vez que for 
+#### criar um novo arquivo. 
+
+#### É possível salvar um modelo desse arquivo e então só alterar 
+#### o título, o autor, a data, e todo o texto que estiver
+#### entre 
+
+```
+\begin{document}
+...
+\end{document}
+```
+---
+class: middle, center
+# E as regras da ABNT?
+
+---
+class: inverse
+# abnTeX2
+.center[
+&gt; ### Como dito anteriormente, o sistema funciona por configurações de cabeçalhos, classes e pacotes.
+
+&gt; ### Dentre essas classes, existe uma em especial que nos é útil: o abnTeX2, que configura automaticamente todo o nosso documento nas normas da ABNT.
+]
+
+---
+# Segundo os autores...
+
+&gt;&gt; O abnTeX2, evolução do abnTeX (ABsurd Norms for TeX), é uma suíte para LaTeX que atende os requisitos das normas da ABNT (Associação Brasileira de Normas Técnicas) para elaboração de documentos técnicos e científicos brasileiros, como artigos científicos, relatórios técnicos, trabalhos acadêmicos como teses, dissertações, projetos de pesquisa e outros documentos do gênero.
+
+&gt;&gt; A suíte abnTeX2 é composta por uma classe, por pacotes de citação e de formatação de estilos bibliográficos, por exemplos, modelos de documentos e por uma ampla documentação.
+
+`Retirado de https://www.abntex.net.br/`
+
+---
+class: inverse, middle, center
+
+# o abnTeX2 lida com teses, dissertações, artigos, projetos  de pesquisa, livros e  também acerta as referências  bibliográficas nas normas da ABNT!
+
+---
+# Gerenciamento bibliográfico
+
++ O *LaTeX* se utiliza do BibTex, um sistema de gerenciamento da bibliografia em um arquivo .bib.
+
++ Nesse arquivo, todos os livros e artigos que serão utilizados devem estar presentes
+
++ A vantagem do BibTex é a mesma do *LaTeX* em comparação com outros sistemas: o estilo é separado do conteúdo. 
+
+---
+# Exemplos de entrada bibliográfica
+
+### Artigo
+
+```
+@article{wgs2013sistema,
+  title={O sistema oligárquico representativo da Primeira República},
+  author={Santos, Wanderley Guilherme dos},
+  journal={Dados - Revista de Ciências Sociais},
+  volume={56},
+  number={1},
+  pages={9--37},
+  year={2013},
+  publisher={Universidade do Estado do Rio de Janeiro}
+}
+```
+
+&gt; SANTOS, Wanderley Guilherme dos. O sistema oligárquico representativo da Primeira República. Dados - Revista de Ciências Sociais, v. 56, n. 1, p. 9-37, 2013.
+
+---
+# Exemplos de entrada bibliográfica
+
+### Livro
+
+```
+@book{argelina1999executivo,
+  title={Executivo e Legislativo na nova ordem constitucional},
+  author={Figueiredo, Argelina Cheibub and 
+          Limongi, Fernando de Magalhães Papaterra},
+  year={1999},
+  publisher={Editora FGV}
+}
+```
+
+&gt; FIGUEIREDO, Argelina Cheibub; LIMONGI, Fernando de Magalhães Papaterra. Executivo e Legislativo na nova ordem constitucional. Editora FGV, 1999.
+
+---
+# Entendendo melhor...
+
++ @book - define que a entrada bibliográfica segue a norma de livro
++ {argelina1999executivo} - é a palavra-chave de atalho para citar
++ title - define o título da obra
++ author  - define o autor ou autores, sempre na ordem *Sobrenome, Nome*
++ year - define o ano da publicação
++ publisher - define a editora
++ pages - intervalo de páginas  (para artigos ou capítulos)
++ number  - número da edição
++ volume - número do volume
++ journal - nome do periódico
+
+---
+# Gerenciamento bibliográfico
+
++ ### BibDesk
+
++ ### Google Scholar
+
++ ### Bibme.org
+ 
++ ### Truben.no/latex/bibtex/
+
+.center[.middle[
+&gt; ### Um arquivo .bib é gerado, e ele deve estar na mesma pasta que o .tex para que tudo funcione
+]]
+
+---
+class: inverse
+
+# Como citar?
+
++ *\cite[]{}* - (SOBRENOME, ANO)
+
++ *\citeauthoronline{}* - Sobrenome
+
++ *\citeyear{}* - ano
+
++ *\citeonline{}* - Sobrenome (ano)
+
+---
+class: inverse
+
+# Exemplos de citação:
+
+.center[
+.pull-left[
++ #### De acordo com *\citeonline{wgs2013sistema}...* 
+
++ #### ``O padrão organizacional do Legislativo brasileiro é bastante diferente do norte-americano.'' *\cite[p. 22]{argelina1999executivo}*
+]
+.pull-right[
++ #### De acordo com Santos (2013)...
+
++ #### "O padrão organizacional do Legislativo brasileiro é bastante diferente do norte-americano." (FIGUEIREDO; LIMONGI, 1999, p. 22)
+]]
+
+---
+class: middle, center
+
+### Atenção: Em um arquivo *LaTeX*, nunca utilize as aspas normais ( " " ). Para as aspas, utiliza-se duas crases no início no início e duas as aspas simples (ou acento agudo do MacOS) no final.
+
+ 
+---
+# Referências bibliográficas
+
+Sempre que uma entrada bibliográfica for citada com os comandos anteriores, ela também será adicionada ao final do arquivo, na área  de Referências Bibliográfica / Bibliografia
+
+Para que isso ocorra, o arquivo deve conter, antes de `\end{document}` o seguinte comando:
+
+
+**_\bibliography{nomedoarquivo}_**
+
+
+Onde *nomedoarquivo* é o arquivo .bib, sem a extensão final.
+
+---
+# Referências bibliográficas
+
+#### O abnTeX2 adiciona em que páginas se encontram tais citações, e todas são linkadas: quando clico em uma entrada no texto, o arquivo é direcionado para o final, indicando a entrada completa. 
+
+--
+## Exemplo:
+
+#### FIGUEIREDO, Argelina Cheibub; LIMONGI, Fernando de Magalhães Papaterra. Executivo e Legislativo na nova ordem constitucional. Editora FGV, 1999. Citado uma vez na página 8. 
+
+---
+# Como definir a classe?
+
+Através do comando exibido anteriormente:
+
+  **\documentclass[**
+
+	article,			% indica que é um artigo acadêmico
+	
+	12pt,				% tamanho da fonte
+	
+	oneside,			% para impressão apenas no verso. Oposto a twoside
+	
+	a4paper,			% tamanho do papel. 
+	
+	english,			% idioma adicional para hifenização
+	
+	brazil,				% o último idioma é o principal do documento
+	
+	sumario=tradicional
+	
+	]{abntex2} 
+	
+  **\usepackage[alf]{abntex2cite}	% Citações padrão ABNT**
+  
+---
+# Modelos personalizados
+
+Como o arquivo .tex tem a separação entre estilo e conteúdo, podemos criar modelos para funções específicas
+
+Muitas revistas, editoras e congressos tem seus modelos disponibilizados online, como: 
+--
+
++ Elsevier 
+
++ Springer
+
++ Oxford University Press
+
++ PLoS One
+
++ APA
+
++ ABNT  (como visto no abnTeX2)
+
+e...
+--
+a **UERJ** (e outras universidades)
+
+---
+# Regras da UERJ
+
+A UERJ tem um  conjunto de normas próprias (somadas à ABNT), disponíveis em http://www.bdtd.uerj.br/
+que determina como devem ser as teses e dissertações. Dentre as normas:
+
++ logomarca da UERJ
+
++ marca d'água da logomarca
+
++ Folha de aprovação 
+
++  Instruções  específicas do sumário
+
++ Folha de resumo em português e inglês, etc
+
+---
+class: inverse, center, middle
+# Modelo repUERJ
+
+---
+# Modelo repUERJ
+
++ Criado pelo Prof. Luís Fernando de Oliveira (IF - UERJ)
+
++ É um modelo que agrupa todas as normas da UERJ e ABNT	
+
++ Já vem configurado
+
++ Basta  alterar as variáveis (título, autor, orientador, etc) e o texto corrido
+
++ Permite inclusão até mesmo da ficha catalográfica
+
++  Gera o resumo corretamente
+
++ Pode ser baixado ou utilizado online no OverLeaf (sem instalar nada)
+
+---
+class: inverse, center,  middle
+![](caparep.png)
+
+---
+class: inverse, center,  middle
+![](ficharep.png)
+
+---
+class: inverse, center,  middle
+![](sumariorep.png)
+
+---
+class: inverse, middle, center
+# Antes da parte prática, alguns outros comandos...
+
+---
+# Para adicionar imagens:
+
+```
+\begin{figure}{12cm} 
+\label{fig:logouerj}
+\caption{Aqui entra o título da figura -- deve ser curto e objetivo}
+\includegraphics[width=\hsize]{logo_uerj_cinza.png}}
+\legend{Aqui entra a legenda da figura. Deve ser simples e sucinto.
+\end{figure}
+```
+
+---
+# Para adicionar equações
+
+```
+\begin{align}
+y_{ij} = \alpha - \beta \times \frac{\delta}{\gamma} \\
+x = 1+ \pi^5
+\end{align}
+```
+ou
+```
+$$ y_{ij} = \alpha - \beta \times \frac{\delta}{\gamma}$$
+$$ x = 1+ \pi^5$$
+```
+que resultam em:
+$$ y_{ij} = \alpha - \beta \times \frac{\delta}{\gamma}$$
+`$$x = 1+ \pi^5$$`
+
+---
+# Para fazer referências a objetos 
+
+```
+\ref{labeldoobjeto} % Para o número 
+\pageref{labeldoobjeto} % Para a página onde o objeto se encontra
+```
+Exemplo:
+
+`Como visto na figura~\ref{fig:congresso} na página~\pageref{fig:congresso}...`
+
+resultando em: 
+
+#### "Como visto na figura 8 na página 47..."
+
+Isso vale para qualquer objeto, figura, tabela, gráfico, capítulo ou seção, desde que o mesmo contenha um `\label{}` referenciável
+	
+---
+# Para fazer citação de mais de 3 linhas 
+### (com recuo, menor espaçamento, etc)
+
+```
+\begin{citacao}
+texto blablabla
+\end{citacao}
+```
+
+---
+class: inverse, middle, center
+# Parte Prática:
+## Análise dos modelos do abnTeX2 e do repUERJ no OverLeaf
+    </textarea>
+<style data-target="print-only">@media screen {.remark-slide-container{display:block;}.remark-slide-scaler{box-shadow:none;}}</style>
+<script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+<script>var slideshow = remark.create({
+"highlightStyle": "github",
+"highlightLines": true,
+"countIncrementalSlides": false
+});
+if (window.HTMLWidgets) slideshow.on('afterShowSlide', function (slide) {
+  window.dispatchEvent(new Event('resize'));
+});
+(function(d) {
+  var s = d.createElement("style"), r = d.querySelector(".remark-slide-scaler");
+  if (!r) return;
+  s.type = "text/css"; s.innerHTML = "@page {size: " + r.style.width + " " + r.style.height +"; }";
+  d.head.appendChild(s);
+})(document);
+
+(function(d) {
+  var el = d.getElementsByClassName("remark-slides-area");
+  if (!el) return;
+  var slide, slides = slideshow.getSlides(), els = el[0].children;
+  for (var i = 1; i < slides.length; i++) {
+    slide = slides[i];
+    if (slide.properties.continued === "true" || slide.properties.count === "false") {
+      els[i - 1].className += ' has-continuation';
+    }
+  }
+  var s = d.createElement("style");
+  s.type = "text/css"; s.innerHTML = "@media print { .has-continuation { display: none; } }";
+  d.head.appendChild(s);
+})(document);
+// delete the temporary CSS (for displaying all slides initially) when the user
+// starts to view slides
+(function() {
+  var deleted = false;
+  slideshow.on('beforeShowSlide', function(slide) {
+    if (deleted) return;
+    var sheets = document.styleSheets, node;
+    for (var i = 0; i < sheets.length; i++) {
+      node = sheets[i].ownerNode;
+      if (node.dataset["target"] !== "print-only") continue;
+      node.parentNode.removeChild(node);
+    }
+    deleted = true;
+  });
+})();
+// adds .remark-code-has-line-highlighted class to <pre> parent elements
+// of code chunks containing highlighted lines with class .remark-code-line-highlighted
+(function(d) {
+  const hlines = d.querySelectorAll('.remark-code-line-highlighted');
+  const preParents = [];
+  const findPreParent = function(line, p = 0) {
+    if (p > 1) return null; // traverse up no further than grandparent
+    const el = line.parentElement;
+    return el.tagName === "PRE" ? el : findPreParent(el, ++p);
+  };
+
+  for (let line of hlines) {
+    let pre = findPreParent(line);
+    if (pre && !preParents.includes(pre)) preParents.push(pre);
+  }
+  preParents.forEach(p => p.classList.add("remark-code-has-line-highlighted"));
+})(document);</script>
+
+<script>
+(function() {
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    if (/^(https?:)?\/\//.test(links[i].getAttribute('href'))) {
+      links[i].target = '_blank';
+    }
+  }
+})();
+</script>
+
+<script>
+slideshow._releaseMath = function(el) {
+  var i, text, code, codes = el.getElementsByTagName('code');
+  for (i = 0; i < codes.length;) {
+    code = codes[i];
+    if (code.parentNode.tagName !== 'PRE' && code.childElementCount === 0) {
+      text = code.textContent;
+      if (/^\\\((.|\s)+\\\)$/.test(text) || /^\\\[(.|\s)+\\\]$/.test(text) ||
+          /^\$\$(.|\s)+\$\$$/.test(text) ||
+          /^\\begin\{([^}]+)\}(.|\s)+\\end\{[^}]+\}$/.test(text)) {
+        code.outerHTML = code.innerHTML;  // remove <code></code>
+        continue;
+      }
+    }
+    i++;
+  }
+};
+slideshow._releaseMath(document);
+</script>
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+(function () {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src  = 'https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML';
+  if (location.protocol !== 'file:' && /^https?:/.test(script.src))
+    script.src  = script.src.replace(/^https?:/, '');
+  document.getElementsByTagName('head')[0].appendChild(script);
+})();
+</script>
+  </body>
+</html>
