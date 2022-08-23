@@ -1,9 +1,9 @@
 ---
 title: "Introdução ao LaTeX"
 subtitle: "com o padrão ABNT"
-author: "Mateus Pestana"
-institute: "V Semana Discente IESP-UERJ"
-date: "16/09/2019"
+author: "Matheus Pestana"
+institute: "VII Seminário Discente IESP-UERJ"
+date: "24/08/2022"
 output:
   xaringan::moon_reader:
     css: xaringan-themer.css
@@ -137,7 +137,7 @@ class: inverse
 \documentclass{article}
 \title{Uso de \LaTeX nos periódicos científicos brasileiros}
 \author{Mateus Pestana}
-\date{Setembro 2019}
+\date{Agosto 2022}
 \begin{document}
    \maketitle
    O presente artigo tem como objetivo analisar a utilização da
@@ -259,7 +259,7 @@ class: inverse
 \documentclass{article}
 \title{Uso de \LaTeX nos periódicos científicos brasileiros}
 \author{Mateus Pestana}
-\date{Setembro 2019}
+\date{Agosto 2022}
 \begin{document}
 \maketitle
 \section{Introdução}
