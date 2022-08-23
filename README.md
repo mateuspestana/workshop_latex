@@ -1,6 +1,6 @@
-# Workshop de LaTeX - Semana Discente IESP/UERJ 2019
+# Workshop de LaTeX - Semana Discente IESP/UERJ 2022
 
-Esse repositório consiste nos arquivos utilizados no minicurso de LaTeX que ministrei na Semana Discente do IESP/UERJ em 2019. 
+Esse repositório consiste nos arquivos utilizados no minicurso de LaTeX que ministrei na Semana Discente do IESP/UERJ em 2022. 
 
 A apresentação pode ser encontrada em [PDF](/LaTeX_Discente.pdf), em [HTML](/LaTeX_Discente.html) ou em [Rmd](/LaTeX_Discente.pdfLaTeX_Discente.rmd). 
 
